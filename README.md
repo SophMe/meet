@@ -71,3 +71,14 @@ The application uses the Google Calendar API to fetch upcoming events.
 - Given the list of events is open 
 - When the user views the event data visualization 
 - Then a chart should be displayed showing the number of upcoming events in each city
+
+## Serverless Functions
+To handle the integration with the Google Calendar API a serverless function could be triggered when a user searches for events in a specific city or requests to see event details. The serverless function could then fetch the relevant data from the Google Calendar API and return it to the user.
+
+When a user types a city into the search box, the serverless function could be triggered to fetch only events in that city and return them to the user.
+
+For offline data storage, a serverless function could store event data in a database when the user is online. This way, when the user goes offline, the app can still display cached event data without needing to fetch new data from the API.
+
+To handle errors that occur when the user is offline or when there is an error fetching data from the API, a serverless function could display an error message and allow the user to retry their action or try again later.
+
+Finally, a serverless function could be used to generate a chart showing the number of upcoming events in each city. The function could fetch the relevant data from the API and then use a library like D3.js to generate the chart, which would be displayed to the user.
