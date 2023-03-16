@@ -25,3 +25,9 @@ functions:
       - http:
           path: api/token/{code} # code will be an URI parameter for example user?name=john&age=25
           method: get
+  getCalenderEvents:
+    handler: handler.getCalenderEvents
+    events:
+      - http:
+          path: api/get-events/{access_token}
+          method: get
