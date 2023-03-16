@@ -19,9 +19,9 @@ functions:
       - http:
           path: api/get-auth-url
           method: get
-  # getAccessToken:
-  #   handler: handler.getAccessToken
-  #   events: 
-  #     - http:
-  #         path: api/token/{code}
-  #         method: get
+  getAccessToken:
+    handler: handler.getAccessToken
+    events: 
+      - http:
+          path: api/token/{code} # code will be an URI parameter for example user?name=john&age=25
+          method: get
