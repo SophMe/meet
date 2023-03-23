@@ -17,7 +17,7 @@ class Event extends Component {
     return (
       <div className="event">
         <h4 className="title">{event.summary}</h4>
-        <p className="startTime">{new Date(event.start.dateTime).toLocaleTimeString()}</p>
+        <p className="startTime">{event.start.dateTime}</p>
         <p className="location">{event.location}</p>
         <button className="details-btn" onClick={this.toggleDetails}>{isCollapsed ? "Show" : "Hide"} details</button>
         {!isCollapsed} {
