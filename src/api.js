@@ -14,7 +14,7 @@ export const getAccessToken = async () => {
     const code = await searchParams.get("code");
     if (!code) {
       const results = await axios.get(
-        "https://ddjy3ni397.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url"
+        `https://ddjy3ni397.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url`
       );
       const { authUrl } = results.data;
       return (window.location.href = authUrl);
@@ -43,8 +43,7 @@ export const getEvents = async () => {
   const token = await getAccessToken();
   if (token) {
     removeQuery();
-    // eslint-disable-next-line
-    const url = 'https://ddjy3ni397.execute-api.eu-central-1.amazonaws.com/dev/api/token/' + '/' + token;
+    const url = `https://ddjy3ni397.execute-api.eu-central-1.amazonaws.com/dev/api/getevents/${token}`;
     const result = await axios.get(url);
     if (result.data) {
       var locations = extractLocations(result.data.events);
@@ -80,8 +79,7 @@ const removeQuery = () => {
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
-    // eslint-disable-next-line
-    'https://ddjy3ni397.execute-api.eu-central-1.amazonaws.com/dev/api/token/' + '/' + encodeCode
+    `https://ddjy3ni397.execute-api.eu-central-1.amazonaws.com/dev/api/token/${encodeCode}`
   )
     .then((res) => {
       return res.json();
