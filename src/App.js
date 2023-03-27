@@ -21,7 +21,7 @@ class App extends Component {
     });
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.mounted = false;
   }
 
@@ -38,7 +38,7 @@ class App extends Component {
     return (
       <div className="App">
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <EventList events={this.state.events} />
+        <EventList events={this.state.events} />    {/* pass the state to EventList as a prop of events */}
         <NumberOfEvents />
       </div>
     );

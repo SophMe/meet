@@ -5,7 +5,7 @@ import axios from "axios";
 import NProgress from "nprogress";
 
 export const getAccessToken = async () => {
-  const accessToken = localStorage.getItem("access_token");
+  const accessToken = localStorage.getItem("access_token");     // try to retrieve access token
   const tokenCheck = accessToken && (await checkToken(accessToken));
 
   if (!accessToken || tokenCheck.error) {
@@ -43,7 +43,7 @@ export const getEvents = async () => {
   const token = await getAccessToken();
   if (token) {
     removeQuery();
-    const url = `https://ddjy3ni397.execute-api.eu-central-1.amazonaws.com/dev/api/getevents/${token}`;
+    const url = `https://ddjy3ni397.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/${token}`;
     const result = await axios.get(url);
     if (result.data) {
       var locations = extractLocations(result.data.events);

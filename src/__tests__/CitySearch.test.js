@@ -66,7 +66,7 @@ describe("<CitySearch /> component", () => {
   // USER CAN SELECT A CITY FROM THE SUGGESTED LIST
   test("selecting CitySearch input reveals the suggestions list", () => {
     CitySearchWrapper.find('.city').simulate('focus');
-    expect(CitySearchWrapper.state('showSuggestions')).toBe(true);
+    expect(CitySearchWrapper.state('showSuggestions')).toBe(true);    
     expect(CitySearchWrapper.find('.suggestions').prop('style')).not.toEqual({ display: 'none' });
   });
 
