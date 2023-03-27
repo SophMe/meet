@@ -1,6 +1,9 @@
 {
   "name": "meet",
   "version": "0.1.0",
+  "jest": {
+    "transformIgnorePatterns": ["node_modules/(?!axios)/"]
+},
   "private": true,
   "homepage": "https://SophMe.github.io/meet",
   "dependencies": {
