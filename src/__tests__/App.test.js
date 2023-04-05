@@ -72,4 +72,11 @@ describe("<App /> integration", () => {
     AppWrapper.unmount();
   });
 
+  test("change number of events shown when user input changes", () => {
+    const AppWrapper = mount(<App />);
+    const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+    const eventCount = { target : {value : 4} };
+    NumberOfEventsWrapper.find('.number').simulate('change', eventCount);
+    expect(AppWrapper.state('eventCount')).toEqual(4);
+  })
 });
