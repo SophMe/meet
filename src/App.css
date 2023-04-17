@@ -129,13 +129,28 @@ input[type="number"] {
   grid-gap: 20px;
   padding: 20px;
   font-family: sans-serif;
-}
+} 
+*/
 
-.Alert {
+.InfoAlert {
   position: fixed;
   top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
+.ErrorAlert {
+  position: fixed;
+  top: 50px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/*
 .data-vis-wrapper {
   display: flex;
   align-items: center;
