@@ -28,9 +28,9 @@ const checkToken = async (accessToken) => {
   const result = await fetch(
     `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
 )
-  .then((res) => res.json())
-  .catch((error) => error.json());
-return result;
+    .then((res) => res.json())
+    .catch((error) => error.json());
+  return result;
 };
 
 export const getEvents = async () => {
@@ -40,15 +40,24 @@ export const getEvents = async () => {
     NProgress.done();
    return mockData;
   }
+
+  // check whether app is offline via navigator.onLine API
+  if (!navigator.onLine) {
+    const data = localStorage.getItem("lastEvents");
+    NProgress.done();
+    return data?JSON.parse(data).events: [];
+  }
+
   const token = await getAccessToken();
   if (token) {
     removeQuery();
+    // if there is a token we get events
     const url = `https://ddjy3ni397.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/${token}`;
     const result = await axios.get(url);
     if (result.data) {
       var locations = extractLocations(result.data.events);
-      localStorage.setItem("lastEvents", JSON.stringify(result.data));
-      localStorage.setItem("locations", JSON.stringify(locations));
+      localStorage.setItem("lastEvents", JSON.stringify(result.data));  // create key lastEvents to store that data and load it later
+      localStorage.setItem("locations", JSON.stringify(locations));     // localStorage can only store strings
     }
     NProgress.done();
     return result.data.events;
