@@ -5,12 +5,14 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents } from './api';
 import './nprogress.css';
+import { WarningAlert } from './Alert';
 
 class App extends Component {
   state = {
     events: [],
     locations: [],
-    eventCount: 32
+    eventCount: 32,
+    warningText: ""
   }
 
   componentDidMount() {
@@ -30,9 +32,19 @@ class App extends Component {
     getEvents().then((events) => {
       const locationEvents = location === "all" ? events : events.filter((event) => event.location === location);
       this.setState({
-        events: locationEvents.slice(0, this.state.eventCount) // What is this??
+        events: locationEvents.slice(0, this.state.eventCount), // What is this?
       });
     });
+
+    if (!navigator.onLine) {
+      this.setState({
+        warningText: "Your app is offline. Some features may not be available."
+      });
+    } else {
+      this.setState({
+        warningText: ""
+      })
+    }
   }
   
 updateEventCount = (event) => {
@@ -44,11 +56,14 @@ updateEventCount = (event) => {
 }
 
   render() {
+    const {events} = this.state;
+    console.log(events);
     return (
-      <div className="App">
+      <div className="app">
+        <WarningAlert text={this.state.warningText} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <EventList events={this.state.events} />    {/* pass the state to EventList as a prop of events */}
         <NumberOfEvents eventCount={this.state.eventCount} updateEventCount={this.updateEventCount} />
+        <EventList events={this.state.events} />    {/* pass the state to EventList as a prop of events */}
       </div>
     );
   }
