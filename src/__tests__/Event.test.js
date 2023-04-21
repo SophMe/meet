@@ -38,11 +38,16 @@ describe("<Event /> component", () => {
   });
 
   test("toggle event details", () => {
-    expect(EventWrapper.find(".details").hasClass("collapsed")).toBe(true);
-    expect(EventWrapper.find(".details").exists()).toBe(true);
+    expect(EventWrapper.find(".details").exists()).toBe(false);
+    expect(EventWrapper.find(".details-btn").text()).toBe("Show details");
     EventWrapper.find(".details-btn").simulate("click");
     expect(EventWrapper.state("isCollapsed")).toBe(false);
-    expect(EventWrapper.find(".details").hasClass("collapsed")).toBe(false);
+    expect(EventWrapper.find(".details").exists()).toBe(true);
+    expect(EventWrapper.find(".details-btn").text()).toBe("Hide details");
+    EventWrapper.find(".details-btn").simulate("click");
+    expect(EventWrapper.state("isCollapsed")).toBe(true);
+    expect(EventWrapper.find(".details").exists()).toBe(false);
+    expect(EventWrapper.find(".details-btn").text()).toBe("Show details");
   });  
 
 })
