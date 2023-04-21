@@ -69,7 +69,7 @@ updateEventCount = (event) => {
     const {events} = this.state;
     console.log(events);
     return (
-      <div className="app">
+      <div className="App">
         <WarningAlert text={this.state.warningText} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents eventCount={this.state.eventCount} updateEventCount={this.updateEventCount} />
