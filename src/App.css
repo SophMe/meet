@@ -1,5 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:500);
 .App {
+  /* font-family: "Quicksand", sans-serif;
+  color:#FEFAF2;
+  background-color: #182632; */
   text-align: center;
   padding: 2% 5%;
 }
@@ -74,7 +76,7 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  background-color: #FEFAF2;
 }
 
 /* Events */
@@ -93,6 +95,7 @@ input[type="number"] {
 }
 
 .details-btn {
+  font-family: "Quicksand", sans-serif;
   position: absolute;
   right: 5px;
   bottom: 5px;
@@ -136,12 +139,14 @@ input[type="number"] {
   position: fixed;
   top: 20px;
   left: 20px;
+  background-color: #FEFAF2;
 }
 
 .ErrorAlert {
   position: fixed;
   top: 50px;
   left: 20px;
+  background-color: #FEFAF2;
 }
 
 /*
