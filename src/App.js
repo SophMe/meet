@@ -69,7 +69,7 @@ updateEventCount = (event) => {
     const {events} = this.state;
     console.log(events);
     return (
-      <div className="App">
+      <div className={`App ${this.state.showWelcomeScreen ? "hidden" : ""}`}>
         <WarningAlert text={this.state.warningText} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents eventCount={this.state.eventCount} updateEventCount={this.updateEventCount} />
