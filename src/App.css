@@ -1,13 +1,27 @@
-.App {
-  /* font-family: "Quicksand", sans-serif;
-  color:#FEFAF2;
-  background-color: #182632; */
-  text-align: center;
-  padding: 2% 5%;
-}
 
 .App * {
   box-sizing: border-box;
+}
+
+.App {
+  /* font-family: "Quicksand", sans-serif;
+  color:#FEFAF2;
+  background-color: #182632;
+  padding: 2% 5%; */
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+/* 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; */
 }
 
 .hidden {
@@ -26,6 +40,7 @@ p {
 .display-none {
   display: none;
 }
+
 .showSuggestions {
   display: block;
 }
@@ -33,6 +48,7 @@ p {
 /* CitySearch */
 input[type="text"],
 input[type="number"] {
+  background-color: #FEFAF2;
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
@@ -44,12 +60,13 @@ input[type="number"] {
 }
 
 .CitySearch {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
+  position: relative; */
   flex-basis: 300px;
   max-width: 300px;
   margin: auto;
-  position: relative;
+
 }
 
 .city {
@@ -84,23 +101,33 @@ input[type="number"] {
 }
 
 /* Events */
-.event {
+.Event {
+  /* position: relative; */
+  background-color: #FEFAF2;
+  max-width: 80%;
+  align-self: center;
+}
+
+/* .event {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
-}
+} */
 
 .title {
   font-size: 18px;
   font-weight: 600;
 }
 
+.startTime {
+
+}
+
 .details-btn {
   font-family: "Quicksand", sans-serif;
-  position: absolute;
   right: 5px;
   bottom: 5px;
   padding: 5px 8px;
@@ -138,6 +165,10 @@ input[type="number"] {
   font-family: sans-serif;
 } 
 */
+
+.alertText {
+  background-color: #FEFAF2;
+}
 
 .InfoAlert {
   position: fixed;
