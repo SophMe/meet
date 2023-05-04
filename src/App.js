@@ -75,7 +75,7 @@ updateEventCount = (event) => {
           <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
           <NumberOfEvents eventCount={this.state.eventCount} updateEventCount={this.updateEventCount} />
           <EventList events={this.state.events} />    {/* pass the state to EventList as a prop of events */}
-          {/* <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => {getAccessToken()}} /> */}
+          <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => {getAccessToken()}} />
         </div>
       </div>
     );
