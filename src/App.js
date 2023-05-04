@@ -65,16 +65,18 @@ updateEventCount = (event) => {
 }
 
   render() {
-    if (this.state.showWelcomeScreen === undefined) return <div className="App" />
+    if (this.state.showWelcomeScreen === undefined) return <div className="app" />
     const {events} = this.state;
     console.log(events);
     return (
-      <div className="App">
-        <WarningAlert text={this.state.warningText} />
-        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents eventCount={this.state.eventCount} updateEventCount={this.updateEventCount} />
-        <EventList events={this.state.events} />    {/* pass the state to EventList as a prop of events */}
-        <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => {getAccessToken()}} />
+      <div className="app-container">
+        <div className="app">
+          <WarningAlert text={this.state.warningText} />
+          <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+          <NumberOfEvents eventCount={this.state.eventCount} updateEventCount={this.updateEventCount} />
+          <EventList events={this.state.events} />    {/* pass the state to EventList as a prop of events */}
+          {/* <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => {getAccessToken()}} /> */}
+        </div>
       </div>
     );
   }
