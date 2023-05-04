@@ -41,6 +41,12 @@ p {
   margin: 5px 0;
 }
 
+h2, h3 {
+  color: #FEFAF2;
+  font-weight: bold;
+  text-shadow: 2px 2px #000000;
+}
+
 .display-none {
   display: none;
 }
@@ -182,7 +188,7 @@ input[type="number"] {
   background-color: #FEFAF2;
 }
 
-/*
+
 .data-vis-wrapper {
   display: flex;
   align-items: center;
@@ -196,6 +202,7 @@ input[type="number"] {
   overflow: visible;
 }
 
+/*
 .login-button {
   color: #494949;
   text-transform: uppercase;
