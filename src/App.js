@@ -77,11 +77,12 @@ getData = () => {
 };
 
   render() {
-    if (this.state.showWelcomeScreen === undefined) return <div className="app" />
+    if (this.state.showWelcomeScreen === undefined)
+    return <div className="App" />
     const { locations, eventCount, events} = this.state;
     return (
       <div className="app-container">
-        <div className="app">
+        <div className="App">
           <h2>Meet App</h2>
           <h3>Choose your nearest city</h3>
           <WarningAlert text={this.state.warningText} />
@@ -89,7 +90,7 @@ getData = () => {
           <NumberOfEvents updateEventCount={this.updateEventCount} eventCount={eventCount}
           />
           <h3>Events in each City</h3>
-            <div className='data-vis-wrapper'>
+            <div className="data-vis-wrapper">
               <ResponsiveContainer height={400}>
                 <ScatterChart
                   margin={{ top: 20, right: 20, bottom: 20, left: 20, }}
