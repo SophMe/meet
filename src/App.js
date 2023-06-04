@@ -106,7 +106,7 @@ getData = () => {
               </ResponsiveContainer>
             </div>
           <EventList events={events} />    {/* pass the state to EventList as a prop of events */}
-          {/* <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => {getAccessToken()}} /> */}
+          <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => {getAccessToken()}} />
         </div>
       </div>
     );
