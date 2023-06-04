@@ -196,6 +196,11 @@ input[type="number"] {
   background-color: #FEFAF2;
 }
 
+.data-vis-wrapper > div {
+  width: 100%;
+  background-color: #FEFAF2;
+}
+
 .data-vis-wrapper .recharts-responsive-container {
   min-width: 100%;
   display: flex;

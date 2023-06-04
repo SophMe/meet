@@ -3,6 +3,7 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
+import EventGenre from './EventGenre';
 import { extractLocations, getEvents, getAccessToken, checkToken } from './api';
 import './nprogress.css';
 import { WarningAlert } from './Alert';
@@ -91,6 +92,7 @@ getData = () => {
           />
           <h3>Events in each City</h3>
             <div className="data-vis-wrapper">
+              <EventGenre events={events}/>
               <ResponsiveContainer height={400}>
                 <ScatterChart
                   margin={{ top: 20, right: 20, bottom: 20, left: 20, }}
@@ -104,7 +106,7 @@ getData = () => {
               </ResponsiveContainer>
             </div>
           <EventList events={events} />    {/* pass the state to EventList as a prop of events */}
-          <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => {getAccessToken()}} />
+          {/* <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => {getAccessToken()}} /> */}
         </div>
       </div>
     );
